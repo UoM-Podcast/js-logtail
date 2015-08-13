@@ -15,7 +15,7 @@ var poll = 1000; /* 1s */
 var kill = false;
 var loading = false;
 var pause = false;
-var reverse = true;
+var reverse = false;
 var log_data = "";
 var log_file_size = 0;
 
@@ -175,8 +175,8 @@ $(document).ready(function () {
 
     /* If URL is /logtail/?noreverse display in chronological order */
     var hash = location.search.replace(/^\?/, "");
-    if (hash == "noreverse")
-        reverse = false;
+    if (hash == "reverse")
+        reverse = true;
 
     /* Add pause toggle */
     $(pausetoggle).click(function (e) {
